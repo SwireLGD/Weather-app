@@ -6,7 +6,7 @@ const WeatherInfo = () => {
 
     return (
         <Box display="flex" justifyContent="center" alignItems="center" p={2}>
-            <Card sx={{ maxWidth: '70%', width: '100%' }}>
+            <Card sx={{ maxWidth: '80%', width: '100%' }}>
                 <CardContent>
                     <Typography variant="h5" component="div">
                         Temperature: {weather?.main.temp}

@@ -10,6 +10,7 @@ const LogoLink = styled(NavLink)({
 });
 
 const AppToolbar = () => {
+    
     return (
         <AppBar position="sticky" sx={{mb: 2}}>
             <Toolbar>
