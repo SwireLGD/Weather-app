@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import AppToolbar from './components/AppToolbar/AppToolbar';
 import WeatherInfo from './features/weather/Weather.tsx';
-import CityInput from './features/components/CityInput.tsx';
 import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 
