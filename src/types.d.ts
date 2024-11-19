@@ -1,4 +1,9 @@
 export interface IWeather {
+  weather: {
+    icon: string;
+    description: string;
+  }[];
+
   main: {
     temp: number;
     feels_like: number;

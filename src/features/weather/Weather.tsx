@@ -14,6 +14,10 @@ const WeatherInfo = () => {
         ) : weather ? (
           <Card sx={{ maxWidth: '80%', width: '100%' }}>
             <CardContent>
+              <Box display='flex' justifyContent='start' alignItems='center' mb={2}>
+                <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
+                <Typography variant='h5'> {weather.weather[0].description} </Typography>
+              </Box>
               <Typography variant='h5' component='div'>
                 Temperature: {weather?.main.temp}
               </Typography>
