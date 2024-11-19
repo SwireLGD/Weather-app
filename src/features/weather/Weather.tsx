@@ -1,13 +1,13 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import { useAppSelector } from '../../app/hooks';
-import CityInput from '../components/CityInput';
+// import CityInput from '../components/CityInput';
 
 const WeatherInfo = () => {
   const weather = useAppSelector((state) => state.Weather.weather);
 
   return (
     <>
-      <CityInput />
+      {/* <CityInput /> */}
       <Box display='flex' justifyContent='center' alignItems='center' p={2}>
         <Card sx={{ maxWidth: '80%', width: '100%' }}>
           <CardContent>

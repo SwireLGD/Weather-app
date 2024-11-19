@@ -1,9 +1,7 @@
 import {
   Box,
   Container,
-  createTheme,
   Paper,
-  Switch,
   ThemeProvider,
   Typography,
 } from '@mui/material';
@@ -11,39 +9,19 @@ import AppToolbar from './components/AppToolbar/AppToolbar';
 import WeatherInfo from './features/weather/Weather.tsx';
 import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
+import { theme, ThemeSwitch } from './theme.ts';
 
 const App = () => {
-  const [mode, setMode] = useState(true);
+  const [mode, setMode] = useState<'light' | 'dark'>('dark');
 
-  const theme = createTheme({
-    components: {
-      MuiTextField: {
-        defaultProps: {
-          variant: 'outlined',
-          fullWidth: true,
-        },
-      },
-    },
-    palette: {
-      mode: mode ? 'dark' : 'light',
-    },
-  });
-
-  const handleSwitch = () => {
-    if (mode) {
-      setMode(false);
-    } else {
-      setMode(true);
-    }
-  };
+  const handleSwitch = () => setMode((prevMode) => (prevMode === 'dark' ? 'light' : 'dark'));
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme(mode)}>
       <Paper elevation={0} sx={{ height: '100vh' }} square>
         <header>
           <Box display='flex' alignItems='center'>
-            <Switch checked={mode} onChange={handleSwitch} />
-            <Typography sx={{ ml: 1 }}>{mode ? 'Dark Mode' : 'Light Mode'}</Typography>
+          <ThemeSwitch checked={mode === 'dark'} onChange={handleSwitch} />
           </Box>
           <AppToolbar />
         </header>
