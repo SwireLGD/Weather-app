@@ -10,9 +10,10 @@ import WeatherInfo from './features/weather/Weather.tsx';
 import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import { theme, ThemeSwitch } from './theme.ts';
+import CityInput from './features/components/CityInput.tsx';
 
 const App = () => {
-  const [mode, setMode] = useState<'light' | 'dark'>('dark');
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
 
   const handleSwitch = () => setMode((prevMode) => (prevMode === 'dark' ? 'light' : 'dark'));
 
@@ -26,6 +27,7 @@ const App = () => {
           <AppToolbar />
         </header>
         <main>
+          <CityInput />
           <Container maxWidth='xl'>
             <Routes>
               <Route path='/' element={<WeatherInfo />} />
