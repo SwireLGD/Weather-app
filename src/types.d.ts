@@ -9,4 +9,5 @@ export interface IWeather {
 
 export interface IWeatherState {
   weather: IWeather | null;
+  isLoading: boolean;
 }

@@ -3,9 +3,9 @@ import axiosApi from '../../axiosApi';
 import { IWeather } from '../../types';
 import axios from 'axios';
 
-export const fetchWeather = createAsyncThunk<IWeather, {city: string; units: string}>(
+export const fetchWeather = createAsyncThunk<IWeather, { city: string; units: string }>(
   'Weather/fetchWeather',
-  async ({city, units}, { rejectWithValue }) => {
+  async ({ city, units }, { rejectWithValue }) => {
     try {
       const response = await axiosApi.get<IWeather>(
         `?q=${city}&appid=9f6861a874957b96fdf0059a500e7d34&units=${units}`,

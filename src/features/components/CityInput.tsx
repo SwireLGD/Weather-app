@@ -12,7 +12,8 @@ const CityInput: React.FC = () => {
     setCity(e.target.value);
   };
 
-  const handleSwitch = () => setUnits((prevMode) => (prevMode === 'metric' ? 'imperial' : 'metric'));
+  const handleSwitch = () =>
+    setUnits((prevMode) => (prevMode === 'metric' ? 'imperial' : 'metric'));
 
   const handleSearch = () => {
     if (city) {
@@ -70,19 +71,13 @@ const CityInput: React.FC = () => {
   }));
 
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      justifyContent="center"
-      p={2}
-    >
+    <Box display='flex' flexDirection='column' alignItems='center' justifyContent='center' p={2}>
       <TextField
-        id="search"
+        id='search'
         value={city}
         onChange={handleChange}
-        placeholder="Enter the city name"
-        variant="outlined"
+        placeholder='Enter the city name'
+        variant='outlined'
         sx={{
           width: '75%',
           '& .MuiOutlinedInput-root': {
@@ -90,16 +85,13 @@ const CityInput: React.FC = () => {
           },
         }}
       />
-      <Button onClick={handleSearch} variant="contained" sx={{ mt: 2 }}>
+      <Button onClick={handleSearch} variant='contained' sx={{ mt: 2 }}>
         Find
       </Button>
-      <Box
-        mt={2}
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
-      >
-        <Typography mr={1}>Show temperature in: {units === 'metric' ? 'Celsius' : 'Fahrenheit'}</Typography>
+      <Box mt={2} display='flex' alignItems='center' justifyContent='center'>
+        <Typography mr={1}>
+          Show temperature in: {units === 'metric' ? 'Celsius' : 'Fahrenheit'}
+        </Typography>
         <UnitsSwitch
           checked={units === 'imperial'}
           onChange={handleSwitch}
